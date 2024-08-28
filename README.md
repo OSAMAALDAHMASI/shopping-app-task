@@ -1,16 +1,55 @@
-# shopping_app_task
+# Shopping App Task
 
-aldahmasi app
+## Project Overview
+The "Shopping App Task" is a simple e-commerce application developed within 3 hours or less during an assessment at the Masnad Academy. The app provides a set of features for managing products and enhancing the shopping experience.
 
-## Getting Started
+## Key Features
+- Display products
+- Product detail page
+- Search for a specific product
+- Option to add products to favorites
+- Store products locally and display them offline
 
-This project is a starting point for a Flutter application.
+## Technology Stack
+- State Management: GetX
+- Database: SQLite (local storage)
+- HTTP Library: For API interaction
 
-A few resources to get you started if this is your first Flutter project:
+## Installation
+1. Clone the repository:
+  
+   git clone https://github.com/OSAMAALDAHMASI/shopping-app-task.git
+   
+2. Navigate to the project directory:
+  
+   cd shopping-app-task
+   
+3. Install the dependencies:
+  
+   flutter pub get
+   
+4. Run the app:
+  
+   flutter run
+   
+## Usage
+1. Upon launching the app, you will see a list of available products.
+2. Tap on a product to view its details.
+3. Use the search bar to find a specific product.
+4. Add products to your favorites using the favorite button.
+5. Products are stored locally using SQLite, allowing access even without internet connectivity.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## API Used
+The app utilizes the [Fake Store API](https://fakestoreapi.com) for product data.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Contributing
+If you would like to contribute to the development of this project, please follow these steps:
+
+1. Fork the repository
+2. Create a new branch for your feature/bug fix
+3. Make the necessary changes
+4. Commit and push your changes
+5. Submit a pull request
+
+## Author
+- GitHub Username: [OSAMAALDAHMASI](https://github.com/OSAMAALDAHMASI)
