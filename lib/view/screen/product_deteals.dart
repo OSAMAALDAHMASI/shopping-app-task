@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
+import '../../controller/cart_controller.dart';
 import '../../data/model/product_model.dart';
 
 class ProductDetailScreen extends StatefulWidget {
@@ -12,7 +14,7 @@ class ProductDetailScreen extends StatefulWidget {
 }
 
 class _ProductDetailScreenState extends State<ProductDetailScreen> {
-  bool _isFavorite = false;
+  CartAddController controller = Get.put(CartAddController());
 
   @override
   Widget build(BuildContext context) {
@@ -21,13 +23,13 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
         title: Text(widget.product.title),
         actions: [
           IconButton(
-            icon: Icon(_isFavorite ? Icons.favorite : Icons.favorite_border),
-            color: _isFavorite ? Colors.red : Colors.black,
+            icon: Icon(
+                controller.isFavorite ? Icons.favorite : Icons.favorite_border),
+            color: controller.isFavorite ? Colors.red : Colors.black,
             onPressed: () {
               setState(() {
-                _isFavorite = !_isFavorite;
+                controller.isFavorite = !controller.isFavorite;
               });
-              // Add logic to save/remove the product from favorites
             },
           ),
         ],
@@ -82,6 +84,25 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                     style: const TextStyle(
                       fontSize: 16.0,
                       color: Colors.grey,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20.0),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ElevatedButton.icon(
+                    onPressed: () {
+                      controller.addToCart(widget.product, context);
+                    },
+                    icon: Icon(Icons.add_shopping_cart),
+                    label: Text('Add to Cart'),
+                    style: ElevatedButton.styleFrom(
+                      foregroundColor: Colors.white,
+                      backgroundColor: Colors.blue,
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 16.0, vertical: 12.0), // لون النص
                     ),
                   ),
                 ],
